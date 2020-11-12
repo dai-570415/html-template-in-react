@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="ja">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>サービス名 | アイキャッチ（30文字くらい）</title>
+    <meta name="description" content="Webサイトの概要を記入">
+    <link rel="canonical" href="https://www.google.co.jp/">
+    <script crossorigin src="https://unpkg.com/react@16/umd/react.development.js"></script>
+    <script crossorigin src="https://unpkg.com/react-dom@16/umd/react-dom.development.js"></script>
+    <script crossorigin src="https://cdnjs.cloudflare.com/ajax/libs/babel-core/5.8.34/browser.min.js"></script>
+    <link rel="stylesheet" href="./assets/css/style.css">
+    <link rel="stylesheet" href="./assets/css/modal.css">
+  </head>
+  <body>
+    <div class="container">
+      <header class="header">
+        <h1>main title</h1>
+      </header>
+      <main class="main">
+        <section class="content">
+          <h2>content</h2>
+        </section>
+      </main>
+      <footer class="footer">
+        <p>2020 service name</p>
+      </footer>
+      <div id="modal"></div>
+    </div>
+
+    <!-- React -->
+    <script type="text/babel">     
+      // #drawer
+      const Modal = () => { 
+        const [open, setOpen] = React.useState(false);
+        const [close, setClose] = React.useState(false);
+        const openFunc = () => {
+          setOpen(true);
+          setClose(false);
+        }
+        const closeFunc = () => {
+          setOpen(false);
+          setClose(true);
+        }
+        return (
+          <React.Fragment>
+            { !open && <div className="modal-open" onClick={openFunc}><img src="./assets/img/open.svg" alt="open" /></div> }
+            { open && (
+              <div className="modal">
+                <div className="modal-form-set">
+                  <div className="modal-head">
+                    <div className="modal-title">Title</div>
+                    <div className="modal-close" onClick={closeFunc}><img src="./assets/img/close.png" alt="close" /></div>
+                  </div>
+                  <div className="modal-contents">
+                    Contents
+                  </div>
+                </div>
+              </div>
+            )}
+          </React.Fragment>
+        ); 
+      }
+      ReactDOM.render(<Modal />,document.getElementById('modal'));
+    </script>
+  </body>
+</html>

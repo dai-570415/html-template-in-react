@@ -1,0 +1,40 @@
+.modal {
+    background: rgba(0, 0, 0, .7);
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    position: fixed;
+    z-index: 10;
+}
+.modal-form-set {
+    width: 600px;
+    margin: 15vh auto;
+    border-radius: 10px;
+    background: #fff;
+}
+.modal-head {
+    display: flex;
+    justify-content: space-between;
+    font-size: 14px;
+    font-weight: 700;
+    padding: 15px 15px 10px;
+    border-bottom: 1px solid #ccc;
+}
+.modal-contents {
+    text-align: left;
+    padding: 50px;
+    border-radius: 10px;
+    background: #fcfcfc;
+}
+.modal-open img {
+    width: 24px;
+    height: 24px;
+    right: 16px;
+    top: 16px;
+    position: fixed;
+}
+.modal-close img {
+    width: 16px;
+    height: 16px;
+}
